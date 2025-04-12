@@ -1,3 +1,4 @@
+import 'package:ecommerce/utils/cart_item.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -19,13 +20,13 @@ class _CartPage extends State<CartPage>{
   Widget build(BuildContext context) {
     return Consumer<Cart>(builder: (context, value, child)=> Column(
       children: [
-        const Text("Mi carrito"),
+        const Text("Mi carrito", style: TextStyle(fontSize: 40, backgroundColor: Colors.pinkAccent, color: Colors.white),),
         const SizedBox(height: 10),
         Expanded(child: ListView.builder(
             itemCount: value.carrito.length,
             itemBuilder: (context,index){
           Shoe shoe = value.carrito[index];
-          return ShoeTile(shoe: shoe, onPressed: ()=> {},);
+          return CartItem(shoe: shoe, onPressed: ()=> {},);
         }))
       ]
     )

@@ -1,4 +1,3 @@
-import 'package:ecommerce/pages/shop_page.dart';
 import 'package:flutter/material.dart';
 
 import '../models/shoe.dart';
