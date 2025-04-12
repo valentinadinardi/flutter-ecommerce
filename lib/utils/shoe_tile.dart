@@ -1,11 +1,13 @@
+import 'package:ecommerce/pages/shop_page.dart';
 import 'package:flutter/material.dart';
 
 import '../models/shoe.dart';
 
 class ShoeTile extends StatelessWidget {
   Shoe shoe;
+  void Function()? onPressed;
 
-  ShoeTile({super.key, required this.shoe});
+  ShoeTile({super.key, required this.shoe, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +37,7 @@ class ShoeTile extends StatelessWidget {
                 ),
                 Column(
                   children: [
-                   ElevatedButton(onPressed: () => {}, style: ElevatedButton.styleFrom(shape: CircleBorder(), backgroundColor: Colors.pinkAccent, fixedSize: Size(60, 60)), child: Row( mainAxisSize: MainAxisSize.min,mainAxisAlignment: MainAxisAlignment.center,children: [Icon(Icons.add, color: Colors.white, size: 16,)])),
+                   ElevatedButton(onPressed: () => onPressed!(), style: ElevatedButton.styleFrom(shape: CircleBorder(), backgroundColor: Colors.pinkAccent, fixedSize: Size(60, 60)), child: Row( mainAxisSize: MainAxisSize.min,mainAxisAlignment: MainAxisAlignment.center,children: [Icon(Icons.add, color: Colors.white, size: 16,)])),
                   ],
                 ),
               ],

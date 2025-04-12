@@ -21,7 +21,7 @@ class _CartPage extends State<CartPage>{
           child: ListView.builder(
               itemCount: Cart().carrito.length,
               itemBuilder: (context, index) {
-                return ShoeTile(shoe: Cart().carrito[index]);
+                return ShoeTile(shoe: Cart().carrito[index], onPressed: ()=> {},);
               })
       ),
     );
