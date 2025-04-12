@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../models/cart.dart';
+import '../utils/shoe_tile.dart';
+
 class CartPage extends StatefulWidget{
 
   const CartPage({super.key});
@@ -12,8 +15,16 @@ class CartPage extends StatefulWidget{
 class _CartPage extends State<CartPage>{
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text("cart", style: TextStyle(fontSize: 50),),
+    return Scaffold(
+      backgroundColor: Colors.deepPurple.shade200,
+      body: Expanded(
+          child: ListView.builder(
+              itemCount: Cart().carrito.length,
+              itemBuilder: (context, index) {
+                return ShoeTile(shoe: Cart().carrito[index]);
+              })
+      ),
     );
   }
+
 }
